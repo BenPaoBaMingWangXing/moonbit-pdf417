@@ -10,19 +10,22 @@
 </td></tr>
 </table>
 
+[![CI](https://github.com/BenPaoBaMingWangXing/moonbit-pdf417/actions/workflows/ci.yml/badge.svg)](https://github.com/BenPaoBaMingWangXing/moonbit-pdf417/actions/workflows/ci.yml)
 [![MoonBit](https://img.shields.io/badge/MoonBit-0.1.20260904-blue)](https://www.moonbitlang.com/)
 [![license](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
+[**在线试用**](https://benpaobamingwangxing.github.io/moonbit-pdf417/) ·
+[快速开始](#快速开始)
 
 | 指标 | 结果 |
 | --- | --- |
 | 与独立参考实现的一致性向量 | **127 / 127（100%）** |
 | 单元测试 | **202 / 202 通过**（wasm 目标，零警告） |
 | 工业解码器 zxing-cpp 读回 | **23 / 23 张符号全部解出原载荷** |
-| 随机载荷往返（fixed seed） | **110 条全过**，40 条被几何规则正确拒绝，0 条错误 |
+| 随机载荷往返（fixed seed，180 次尝试） | **128 条全过**，52 条被几何规则正确拒绝，0 条错误 |
 | 模块级错误注入恢复 | **23 / 23 全恢复**，含注满纠错容量 |
 | 纠错系数与 ISO/IEC 15438 表 | 9 个级别**全部一致**（系数由 `∏(x − 3^i)` 现算，非抄表） |
 | 符号字符图案表自检 | **2787 / 2787** 条结构合法 |
-| 手写 MoonBit 源码 | 约 2 570 行（不含生成表与测试） |
+| 手写 MoonBit 源码 | 约 2 744 行（不含生成表与测试） |
 
 ---
 
