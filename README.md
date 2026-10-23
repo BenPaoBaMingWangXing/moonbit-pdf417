@@ -476,7 +476,7 @@ let rows_x = winner(rows_votes)
 
 | 资源 | 用途 | 许可 |
 | --- | --- | --- |
-| [pdf417gen](https://github.com/mmulqueen/pdf417gen) 0.8.1 | 生成一致性向量（`tests/vectors/pdf417_vectors.json`）与纠错系数对照表 | MIT，原文见 `tests/vectors/LICENSE.pdf417gen` |
+| [pdf417gen](https://github.com/ihabunek/pdf417-py) 0.8.1 | 生成一致性向量（`tests/vectors/pdf417_vectors.json`）与纠错系数对照表 | MIT，原文见 `tests/vectors/LICENSE.pdf417gen` |
 | ISO/IEC 15438 的符号字符图案表 | `src/pdf417/codeword_table.mbt`（生成物）。标准将其定义为规范性数据表而非闭式规则，故以数据形式入库 | 标准的表格内容，整理过程对照 pdf417gen |
 | ISO/IEC 15438 的文本子模式表 | `src/pdf417/text_table.mbt`（生成物） | 同上 |
 | [zxing-cpp](https://github.com/zxing-cpp/zxing-cpp) | **仅**被 `scripts/verify_zxing.py` 调用，用于验证输出可被真实解码器读取；不进入构建、不进入运行时 | Apache-2.0 |
@@ -496,9 +496,9 @@ let rows_x = winner(rows_votes)
 - **每条结论都有对应的验证命令。** 一致性成绩用 `moon test` 复现；
   错误注入与随机往返用 `python scripts/verify_roundtrip.py`；
   工业解码器验证用 `python scripts/verify_zxing.py`。
-- **AI 写错的每一处都有回归测试。** 「长度描述符在纠错前读取」与
-  「行指示符取第一个可读值」这两个错误，都是被错误注入测试抓出来的，
-  修复后各补了对应用例，测试名直接写明它防的是什么。
+- **几处关键缺陷都由测试抓出。** 「长度描述符在纠错前读取」与
+  「行指示符取第一个可读值」这两个问题都很隐蔽：不报错、只是给出错的载荷，
+  是错误注入测试把它们逼出来的。修复后各补了对应用例，测试名直接写明它防的是什么。
 - **论文式结论与实测数字分离。** 凡写进 README 的百分比都有命令行出处；
   没有实测支持的说法（例如「比 X 快」）一律不写。
 
@@ -509,4 +509,4 @@ let rows_x = winner(rows_votes)
 
 ## 许可
 
-Apache License 2.0，见 [LICENSE](LICENSE)。
+Apache License 2.0，见 [LICENSE](LICENSE)。第三方材料的归属声明见 [NOTICE](NOTICE)。

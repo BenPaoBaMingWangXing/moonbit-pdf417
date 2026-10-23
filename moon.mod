@@ -11,7 +11,7 @@ repository = "https://github.com/BenPaoBaMingWangXing/moonbit-pdf417"
 
 license = "Apache-2.0"
 
-keywords = [ "pdf417", "barcode", "iso-15438", "reed-solomon", "ecma", "encoder" ]
+keywords = [ "pdf417", "barcode", "iso-15438", "reed-solomon", "gf929", "encoder", "decoder" ]
 
 preferred_target = "wasm"
 
